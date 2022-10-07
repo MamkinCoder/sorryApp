@@ -1,6 +1,7 @@
 /temp.txt
 /.env
-sorryEnv/
+venv/
 /.atom*
 sorryFront/
 .DS*
+**/__pycache__
