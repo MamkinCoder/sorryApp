@@ -30,7 +30,7 @@ class UpdateSorry(BaseModel):
     text: Optional[str]
     forgives: Optional[str]
     condemns: Optional[float]
-    date: Optional[datetime]
+    date: datetime = datetime.now()
 
     class Config:
         schema_extra = {
