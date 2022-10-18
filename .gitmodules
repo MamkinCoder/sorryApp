@@ -1,3 +1,6 @@
 [submodule "server/bad_words"]
 	path = server/bad_words
 	url = https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words
+[submodule "server/Gibberish-Detector"]
+	path = server/Gibberish-Detector
+	url = https://github.com/bhumijgupta/Gibberish-Detector

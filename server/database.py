@@ -16,3 +16,4 @@ async def init_db():
     )
 
     await init_beanie(database=client.sorryApp, document_models=[Sorry])
+
