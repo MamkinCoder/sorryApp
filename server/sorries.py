@@ -4,12 +4,16 @@ from beanie import Document
 from pydantic import BaseModel
 from typing import Optional
 
+from beanie.odm.operators.update.general import CurrentDate
+
 
 class Sorry(Document):
     text: str
     forgives: int
     condemns: int
-    date: datetime = datetime.now()
+    ts: datetime = datetime.now()
+
+    CurrentDate({ts, True})
 
     class Settings:
         name = "sorries"
@@ -21,7 +25,7 @@ class Sorry(Document):
                 "text": "I am sorry for being naughty.",
                 "forgives": 100,
                 "condemns": 5,
-                "date": datetime.now()
+                "ts": datetime.now()
             }
         }
 
@@ -30,7 +34,9 @@ class UpdateSorry(BaseModel):
     text: Optional[str]
     forgives: Optional[str]
     condemns: Optional[float]
-    date: datetime = datetime.now()
+    ts: datetime = datetime.now()
+
+    CurrentDate({ts, True})
 
     class Config:
         schema_extra = {
@@ -38,6 +44,6 @@ class UpdateSorry(BaseModel):
                 "text": "I am sorry for being the best!",
                 "forgives": 1,
                 "condemns": 100,
-                "date": datetime.now()
+                "ts": datetime.now()
             }
         }

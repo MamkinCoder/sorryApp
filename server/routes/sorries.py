@@ -9,7 +9,14 @@ router = APIRouter()
 
 @router.post("/", response_description="Sorry added to the database")
 async def add_sorry(sorry: Sorry) -> dict:
+    if "Hello" in sorry.text:
+        print("WHat??")
     await sorry.create()
+    # if not record:
+    #     raise HTTPException(
+    #         status_code=404,
+    #         detail="Review record not found!"
+    #     )
     return {"message": "Sorry added successfully"}
 
 
